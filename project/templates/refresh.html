@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Save
+{% endblock %}
+
+{% block main %}
+    <form action="/refresh" method="post">
+        <button class="btn btn-primary" type="submit">Confirm Refresh</button>
+    </form>
+    <button class="btn btm-secondary" href="index.html">Cancel</button>
+{% endblock %}

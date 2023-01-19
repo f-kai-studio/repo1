@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Main
+{% endblock %}
+
+{% block main %}
+<body>
+<div class="container">
+    <div class="section">
+            <br>
+            <br>
+            <div class="px-10 mx-20 text-center">
+                <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col" colspan="4"></th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+                <br>
+                <br>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for show in shows %}
+                        <tr>
+                            <td>{{ show["name"] }}</td>
+                            <td>{{ show["category"] }}</td>
+                            <td>{{ usd(show["price"]) }}</td>
+                            <td>{{ show["quantity"] }}</td>
+                            <td>{{ usd(show["total"]) }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    <tbody>
+                        <tr>
+                            <td>NET</td>
+                            <td colspan="3"></td>
+                            <td>{{ usd(balance) }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            <form action="/refresh" method="get">
+                <button class="btn btn-primary" type="submit">Refresh Sheet</button>
+            </form>
+    </div>
+</div>
+</body>
+{% endblock %}

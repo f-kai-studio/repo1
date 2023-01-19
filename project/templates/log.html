@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Save
+{% endblock %}
+
+{% block main %}
+    <form action="/log" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="monthyear" name="monthyear" placeholder="MM-YYYY" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Save Current Expense Sheet</button>
+    </form>
+{% endblock %}
